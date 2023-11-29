@@ -42,7 +42,7 @@ const Navbar = () => {
 
   const renderLinks = () => (
     <>
-      <Link className="links" to="/home" style={linkStyle}>
+      <Link className="links" to="/" style={linkStyle}>
         Home
       </Link>
       <Link className="links" to="/about" style={linkStyle}>
@@ -133,7 +133,7 @@ const Navbar = () => {
           {['Home', 'About', 'Services', 'Projects', 'Contact'].map((text) => (
             <Link
             key={text}
-            to={`/${text.toLowerCase()}`}
+            to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}
             style={{ textDecoration: 'none', color: 'inherit' }}
             onClick={closeMenu}
           >
