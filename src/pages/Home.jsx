@@ -1,3 +1,4 @@
+import React from "react";
 import About from "../Components/About";
 import Achievments from "../Components/Achievments";
 import Consultation from "../Components/Consultation";
@@ -7,19 +8,19 @@ import Services from "../Components/Services";
 import Statistics from "../Components/Statistics";
 import Tesmonials from "../Components/Tesmonials";
 
-function Home() {
-    return (
-      <>
-        <Hero/>
-        <InspectionForm/>
-        <About/>
-        <Statistics/>
-        <Services/>
-        <Achievments/>
-        <Tesmonials/>
-        <Consultation/>
-      </>
-    );
-  }
-  
-  export default Home;
+const Home = () => {
+  return (
+    <div>
+      <Hero />
+      <InspectionForm />
+      <About />
+      <Statistics />
+      <Services />
+      <Achievments />
+      <Tesmonials />
+      <Consultation />
+    </div>
+  );
+};
+
+export default Home;
