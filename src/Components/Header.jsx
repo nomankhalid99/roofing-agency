@@ -16,7 +16,6 @@ const Header = () => {
   const isMobile = useMediaQuery("(max-width: 920px)");
   return (
     <div style={{ width: "100%" }}>
-      
       <AppBar
         style={{
           zIndex: 23,
@@ -26,23 +25,22 @@ const Header = () => {
         }}
       >
         {isMobile ? null : (
-                <>
-        <Toolbar>
-          <Container>
-            <Grid
-              container
-              spacing={2}
-              padding={0}
-              margin={0}
-              alignItems="center"
-              sx={{
-                "& .icons:hover" : {
-                  color:'#BE3144',
-                  transition: '0.3s all ease-in-out'
-                }
-              }}
-            >
-              
+          <>
+            <Toolbar>
+              <Container>
+                <Grid
+                  container
+                  spacing={2}
+                  padding={0}
+                  margin={0}
+                  alignItems="center"
+                  sx={{
+                    "& .icons:hover": {
+                      color: "#BE3144",
+                      transition: "0.3s all ease-in-out",
+                    },
+                  }}
+                >
                   <Grid item xs={12} sm={4}>
                     <Typography variant="subtitle1" fontSize={14}>
                       {" "}
@@ -56,7 +54,7 @@ const Header = () => {
                   </Grid>
                   <Grid item xs={12} sm={4} textAlign="right">
                     <IconButton
-                    className="icons"
+                      className="icons"
                       color="inherit"
                       href="https://www.facebook.com/"
                       target="_blank"
@@ -64,7 +62,7 @@ const Header = () => {
                       <Facebook />
                     </IconButton>
                     <IconButton
-                    className="icons"
+                      className="icons"
                       color="inherit"
                       href="https://twitter.com/"
                       target="_blank"
@@ -72,7 +70,7 @@ const Header = () => {
                       <Twitter />
                     </IconButton>
                     <IconButton
-                    className="icons"
+                      className="icons"
                       color="inherit"
                       href="https://www.linkedin.com/"
                       target="_blank"
@@ -80,7 +78,7 @@ const Header = () => {
                       <LinkedIn />
                     </IconButton>
                     <IconButton
-                    className="icons"
+                      className="icons"
                       color="inherit"
                       href="https://www.instagram.com/"
                       target="_blank"
@@ -88,16 +86,14 @@ const Header = () => {
                       <Instagram />
                     </IconButton>
                   </Grid>
-               
-            </Grid>
-          </Container>
-        </Toolbar>
-        <Divider style={{ backgroundColor: "white" }} />
-        </>
-              )}
+                </Grid>
+              </Container>
+            </Toolbar>
+            <Divider style={{ backgroundColor: "white" }} />
+          </>
+        )}
         <Navbar />
       </AppBar>
-      
     </div>
   );
 };

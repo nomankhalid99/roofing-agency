@@ -6,12 +6,12 @@ import {
   Container,
   Grid,
   IconButton,
-  Link,
   List,
   ListItem,
   ListItemText,
   useMediaQuery,Divider
 } from "@mui/material";
+import {Link} from 'react-router-dom';
 import { styled } from '@mui/system'; 
 import { Roofing, Menu, Facebook, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
 
@@ -42,23 +42,29 @@ const Navbar = () => {
 
   const renderLinks = () => (
     <>
-      <Link className="links" href="#" underline="none" marginLeft={4} color="inherit">
+      <Link className="links" to="/home" style={linkStyle}>
         Home
       </Link>
-      <Link className="links" href="#" underline="none" marginLeft={4} color="inherit">
+      <Link className="links" to="/about" style={linkStyle}>
         About
       </Link>
-      <Link className="links" href="#" underline="none" marginLeft={4} color="inherit">
+      <Link className="links" to="/service" style={linkStyle}>
         Services
       </Link>
-      <Link className="links" href="#" underline="none" marginLeft={4} color="inherit">
+      <Link className="links" to="/projects" style={linkStyle}>
         Projects
       </Link>
-      <Link className="links" href="#" underline="none" marginLeft={4} color="inherit">
+      <Link className="links" to="/contact" style={linkStyle}>
         Contact
       </Link>
     </>
   );
+
+  const linkStyle = {
+    textDecoration: 'none',
+    marginLeft: '30px',
+    color: 'white',
+  };
 
   const renderSocialLinks = () => (
     <>
@@ -85,12 +91,14 @@ const Navbar = () => {
     <StyledAppBar isMenuOpen={isMenuOpen}>
       <Toolbar>
         <Container>
-          <Grid container alignItems="center" sx={{
+          <Grid container alignItems="center" 
+          sx={{
                 "& .links:hover" : {
                   color:'#BE3144', 
                   transition: '0.3s all ease-in-out'
                 },
-                }} >
+                }} 
+                >
             <Grid item xs={3}>
               <IconButton onClick={toggleMenu}>
                 <Roofing style={{ fontSize: "60px", color: "#BE3144" }} />
@@ -123,9 +131,16 @@ const Navbar = () => {
       {isMobile && isMenuOpen && (
         <List>
           {['Home', 'About', 'Services', 'Projects', 'Contact'].map((text) => (
-            <ListItem button key={text} onClick={closeMenu}>
+            <Link
+            key={text}
+            to={`/${text.toLowerCase()}`}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+            onClick={closeMenu}
+          >
+            <ListItem button>
               <ListItemText primary={text} />
             </ListItem>
+          </Link>
           ))}
           <Divider />
           <ListItem>
