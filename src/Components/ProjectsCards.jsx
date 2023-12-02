@@ -83,8 +83,8 @@ import {
                 Inspiration for Your Next Project
               </Typography>
             </Grid>
-            {projectsData.map((project) => (
-              <Grid key={project.id} item xs={12} sm={6} md={4}>
+            {projectsData.map((project, index) => (
+              <Grid key={project.id} item xs={12} sm={6} md={4}  style={{ marginTop: `${index * 20}px` }}>
                 <Card
                   style={{
                     backgroundColor: "transparent",
