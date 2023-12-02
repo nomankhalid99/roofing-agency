@@ -28,12 +28,18 @@ const InspectionForm = () => {
         boxShadow={isWideScreen1 ? 0 : 20}
         borderRadius={isWideScreen1 ? 0 : 3}
         padding={isWideScreen ? '30px 5px' : 5}
-        style={{
+        sx={{
           position: isWideScreen ? "static" : "absolute",
           top: isWideScreen ? "auto" : "50%",
           left: isWideScreen ? "auto" : "50%",
           transform: isWideScreen ? "none" : "translate(-50%, -50%)",
           background: "rgb(255, 255, 255)",
+          "& .button:hover" : {
+            color:'#BE3144 !important', 
+            backgroundColor:'transparent !important', 
+            outline:"2px solid #BE3144",
+            transition: '0.2s all ease-in-out'
+          },
         }}
       >
         <Grid item xs={12}>
@@ -49,6 +55,7 @@ const InspectionForm = () => {
               </Grid>
               <Grid item xs={12} sm={4} md={3}>
                 <TextField
+                className="input"
                   {...register("email")}
                   placeholder="Email"
                   fullWidth
@@ -66,9 +73,11 @@ const InspectionForm = () => {
               <Grid item xs={12} sm={4} md={2}>
                 <Button
                   type="submit"
+                  className="button"
                   style={{
                     boxShadow: "none",
                     padding: "16px 45px",
+                    marginTop:"8px",
                     textAlign: "center",
                     backgroundColor:"#BE3144"
                   }}

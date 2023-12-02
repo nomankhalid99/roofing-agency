@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {Grid, Typography, } from "@mui/material";
 import Header from "../Components/Header";
 import AboutCompany from "../Components/AboutCompany";
@@ -8,6 +8,9 @@ import AboutChoose from "../Components/AboutChoose";
 import AboutPartners from "../Components/AboutPartners";
 
 const About = () => {
+  useEffect(() => {
+    document.title = "About-Roofing Agnecy"
+  }, [])
   return (
     <div>
       <Grid

@@ -52,7 +52,14 @@ const ServicesInspection = () => {
           }}
         >
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Grid container spacing={2} alignItems="center">
+            <Grid container spacing={2} alignItems="center" sx={{
+               "& .button:hover" : {
+                color:'#BE3144 !important', 
+                backgroundColor:'transparent !important', 
+                outline:"2px solid #BE3144",
+                transition: '0.2s all ease-in-out'
+              },
+            }}>
               <Grid item textAlign="center" xs={12}>
                 <Typography variant="h6" fontWeight="bolder" color="#BE3144">
                   Roof Inspection
@@ -85,10 +92,12 @@ const ServicesInspection = () => {
               <Grid item xs={12} sm={4} md={3}>
                 <Button
                   type="submit"
+                  className="button"
                   fullWidth
                   style={{
                     boxShadow: "none",
                     padding: "16px 45px",
+                    marginTop:"8px",
                     textAlign: "center",
                     backgroundColor: "#BE3144",
                   }}

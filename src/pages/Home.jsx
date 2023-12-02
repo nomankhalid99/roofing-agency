@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import About from "../Components/About";
 import Achievments from "../Components/Achievments";
 import Consultation from "../Components/Consultation";
@@ -9,6 +9,10 @@ import Statistics from "../Components/Statistics";
 import Tesmonials from "../Components/Tesmonials";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Roofing Agency"
+  }, [])
+  
   return (
     <div>
       <Hero />

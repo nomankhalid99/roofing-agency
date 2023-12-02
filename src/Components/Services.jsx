@@ -56,7 +56,15 @@ const Services = () => {
   return (
     <div style={{ backgroundColor: "#212121" }}>
       <Container>
-        <Grid container spacing={3} marginTop={isWideScreen ? 8:  27} paddingY={15}>
+        <Grid container spacing={3} marginTop={isWideScreen ? 8:  27} paddingY={15}
+        sx={{
+          "& .button:hover" : {
+            color:'#BE3144 !important', 
+            backgroundColor:'transparent !important', 
+            outline:"2px solid #BE3144",
+            transition: '0.2s all ease-in-out'
+          },
+        }}>
           <Grid item textAlign="center" xs={12}>
             <Typography
               variant="body1"
@@ -144,6 +152,7 @@ const Services = () => {
             </List>
             <Button
               variant="contained"
+              className="button"
               style={{
                 boxShadow: "none",
                 padding: "12px 25px",

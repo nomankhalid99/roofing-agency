@@ -41,6 +41,12 @@ const About = () => {
             "& .secondImage:hover": {
               transform: "translateY(-10px)",
             },
+            "& .button:hover" : {
+              color:'#BE3144 !important', 
+              backgroundColor:'transparent !important', 
+              outline:"2px solid #BE3144",
+              transition: '0.2s all ease-in-out'
+            },
             ...(isWideScreen1 && {
                 "& .firstImage": {
                   width: "75%",
@@ -116,6 +122,7 @@ const About = () => {
 
             <Button
               variant="contained"
+              className="button"
               style={{ boxShadow: "none", padding: "12px 25px", backgroundColor:"#BE3144" }}
              
             >

@@ -13,7 +13,14 @@ const AboutCompany = () => {
   return (
     <div>
       <Container>
-        <Grid container>
+        <Grid container sx={{
+           "& .button:hover" : {
+            color:'#BE3144 !important', 
+            backgroundColor:'transparent !important', 
+            outline:"2px solid #BE3144",
+            transition: '0.2s all ease-in-out'
+          },
+        }}>
           <Grid
             item
             xs={12}
@@ -61,6 +68,7 @@ const AboutCompany = () => {
             </Typography>
             <Button
               variant="contained"
+              className="button"
               style={{
                 boxShadow: "none",
                 padding: "12px 25px",

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {Grid, Typography,} from "@mui/material";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import ProjectsCards from "../Components/ProjectsCards";
 
 const Projects = () => {
+  useEffect(() => {
+    document.title = "Projects-Roofing Agnecy"
+  }, [])
   return (
     <div>
       <Grid

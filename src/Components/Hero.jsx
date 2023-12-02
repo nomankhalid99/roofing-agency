@@ -17,13 +17,19 @@ const Hero = () => {
     <div style={{ width: "100%" }}>
       <Grid
         container
-        style={{
+        sx={{
           backgroundImage:
             "url(https://img.freepik.com/free-photo/full-shot-roofers-working-with-helmets_23-2149343708.jpg?w=740&t=st=1700578696~exp=1700579296~hmac=878c23d56a7c05bd556a0daf1557e4dcb24501406692cc834c7220513328083a)",
           height: "800px",
           backgroundSize: "cover",
           position: "relative",
           width: "100%",
+          "& .button:hover" : {
+            color:'#BE3144 !important', 
+            backgroundColor:'transparent !important', 
+            outline:"2px solid #BE3144",
+            transition: '0.2s all ease-in-out'
+          },
         }}
       >
         <div
@@ -65,6 +71,7 @@ const Hero = () => {
               </Typography>
               <Button
                 variant="contained"
+                className="button"
                 style={{
                   boxShadow: "none",
                   padding: "12px 25px",

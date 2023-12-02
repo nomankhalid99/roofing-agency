@@ -90,7 +90,7 @@ const Footer = () => {
             <Divider sx={{ backgroundColor: '#fff', margin: '10px 0' }} />
           </Grid>
           <Grid item paddingY={3} xs={12} sm={6}>
-            <Typography textAlign={isSmallScreen ? 'center':'start'}>Copyright © 2023 Roofing Agency</Typography>
+            <Typography textAlign={isSmallScreen ? 'center':'start'}>Copyright © 2023 <span style={{ color:"#BE3144"}}> Roofing Agency</span></Typography>
           </Grid>
           <Grid item paddingY={3} xs={12} sm={6}>
             <Typography textAlign={isSmallScreen ? 'center':'end'}>Powered By React.js and MUI</Typography>

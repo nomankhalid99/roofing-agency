@@ -7,7 +7,14 @@ const AboutHistory = () => {
   return (
     <div style={{ backgroundColor: "#132043" }}>
       <Container>
-        <Grid container paddingY={12} spacing={2}>
+        <Grid container paddingY={12} spacing={2} sx={{
+           "& .button:hover" : {
+            color:'#BE3144 !important', 
+            backgroundColor:'transparent !important', 
+            outline:"2px solid #BE3144",
+            transition: '0.2s all ease-in-out'
+          },
+        }}>
           <Grid item textAlign="center" xs={12}>
             <Typography
               variant="body1"
@@ -79,6 +86,7 @@ const AboutHistory = () => {
               </Typography>
               <Button
                 variant="contained"
+                className="button"
                 style={{
                   boxShadow: "none",
                   padding: "12px 25px",

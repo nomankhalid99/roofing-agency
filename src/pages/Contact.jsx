@@ -42,6 +42,11 @@ const Contact = () => {
     console.log(data);
   };
 
+
+  useEffect(() => {
+    document.title = "Contact-Roofing Agnecy"
+  }, [])
+
   useEffect(() => {
     if (typeof google === "object" && typeof google.maps === "object") {
       const mapOption = {
@@ -65,7 +70,7 @@ const Contact = () => {
     <div>
       <Grid
         container
-        style={{
+        sx={{
           backgroundImage:
             "url(https://img.freepik.com/free-vector/flat-design-roof-tile-pattern-illustration_23-2149283193.jpg?w=900&t=st=1701183971~exp=1701184571~hmac=bce94513b1da936e8467955006feeb702e3a838a39fdbab22b1864cfeb3a76ef)",
           height: "400px",
@@ -98,7 +103,14 @@ const Contact = () => {
         </Grid>
       </Grid>
       <Container>
-        <Grid container paddingY={11}>
+        <Grid container paddingY={11} sx={{
+          "& .button:hover" : {
+            color:'#BE3144 !important', 
+            backgroundColor:'transparent !important', 
+            outline:"2px solid #BE3144",
+            transition: '0.2s all ease-in-out'
+          },
+        }}>
           <Grid
             item
             md={6}
@@ -191,6 +203,7 @@ const Contact = () => {
               />
               <Button
                 type="submit"
+                className="button"
                 variant="contained"
                 style={{
                   boxShadow: "none",

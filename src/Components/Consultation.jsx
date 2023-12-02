@@ -34,7 +34,7 @@ const Consultation = () => {
 
   return (
     <div style={backgroundStyle}>
-      <Grid container>
+      <Grid container >
         <Grid
           item
           paddingTop={isSmallScreen ? 8.7 : isVerySmallScreen ? 3 :  12}
@@ -65,7 +65,12 @@ const Consultation = () => {
       <Container>
         <Grid
           container
-          style={{ position: isWideScreen ? "static" : "relative", }}
+          sx={{ position: isWideScreen ? "static" : "relative",  "& .button:hover" : {
+            color:'#BE3144 !important', 
+            backgroundColor:'transparent !important', 
+            outline:"2px solid #BE3144",
+            transition: '0.2s all ease-in-out'
+          },}}
           paddingTop={isWideScreen ? 4 : 12}
           paddingBottom={isWideScreen ? 6 : 28}
           spacing={2}
@@ -172,6 +177,7 @@ const Consultation = () => {
               />
               <Button
                 type="submit"
+                className="button"
                 variant="contained"
                 style={{
                   boxShadow: "none",
