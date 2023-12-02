@@ -4,7 +4,7 @@ import {
     CardMedia,
     Container,
     Grid,
-    Typography,
+    Typography,useMediaQuery
   } from "@mui/material";
   import React from "react";
   
@@ -60,6 +60,7 @@ import {
   ];
   
   const ProjectsCards = () => {
+    const isSmallScreen = useMediaQuery("(max-width:600px)")
     return (
       <div>
         <Container>
@@ -84,7 +85,7 @@ import {
               </Typography>
             </Grid>
             {projectsData.map((project, index) => (
-              <Grid key={project.id} item xs={12} sm={6} md={4}  style={{ marginTop: `${index * 20}px` }}>
+              <Grid key={project.id} item xs={12} sm={6} md={4}  style={{ marginTop:isSmallScreen ? "" : `${index * 20}px` }}>
                 <Card
                   style={{
                     backgroundColor: "transparent",
